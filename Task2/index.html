@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="player-container">
+        <h1>Music Player</h1>
+
+        <!-- Search and Filter Section -->
+        <input type="text" id="search-bar" placeholder="Search for music..." oninput="searchMusic()">
+        <select id="category-filter" onchange="filterCategory()">
+            <option value="all">All</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="jazz">Jazz</option>
+        </select>
+
+        <!-- Playlist Section -->
+        <div class="playlist">
+            <ul id="music-list">
+                <li data-category="pop" onclick="selectTrack(0)">Song 1 (Pop)</li>
+                <li data-category="rock" onclick="selectTrack(1)">Song 2 (Rock)</li>
+                <li data-category="jazz" onclick="selectTrack(2)">Song 3 (Jazz)</li>
+            </ul>
+        </div>
+
+        <!-- Player Controls -->
+        <div class="controls">
+            <button onclick="previousTrack()">&#9664; Prev</button>
+            <button onclick="playPause()">&#9654; Play</button>
+            <button onclick="nextTrack()">Next &#9654;</button>
+        </div>
+
+        <div class="volume-control">
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" onchange="setVolume(this.value)" value="1">
+        </div>
+
+        <audio id="audio-player" src=""></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
