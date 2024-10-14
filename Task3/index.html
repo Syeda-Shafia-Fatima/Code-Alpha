@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>My Book Library</h1>
+
+    <!-- Form to Add a Book -->
+    <form id="book-form">
+        <input type="text" id="title" placeholder="Book Title" required>
+        <input type="text" id="author" placeholder="Author" required>
+        <input type="text" id="category" placeholder="Category" required>
+        <button type="submit">Add Book</button>
+    </form>
+
+    <!-- Search Input -->
+    <input type="text" id="search" placeholder="Search books..." onkeyup="searchBooks()">
+
+    <!-- Book List -->
+    <h2>Books in Library</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Borrowed</th>
+            </tr>
+        </thead>
+        <tbody id="book-list">
+            <!-- Books will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
